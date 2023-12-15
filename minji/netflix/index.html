@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./styles/style.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/header.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/preview.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/list.css" />
+    <title>Netflix</title>
+  </head>
+  <body>
+    <header class="header">
+      <img class="logo-header" src="./images/netflix_logo.svg" />
+      <img class="profile-header" src="./images/profile.png" />
+    </header>
+    <section class="section-preview">
+      <h1 class="title-preview"></h1>
+      <div class="btn-container-preview">
+        <button>Play</button>
+        <button>My List</button>
+      </div>
+      <p class="content-preview"></p>
+    </section>
+    <section class="section-list">
+      <h3 class="title-list">NETFLIX ORIGINALS</h3>
+      <ul class="movies-list original-list"></ul>
+      <h3 class="title-list">Trending Now</h3>
+      <ul class="movies-list trend-list"></ul>
+    </section>
+    <script type="module" src="./js/listProvider.js"></script>
+    <script type="module" src="./js/previewSwitcher.js"></script>
+  </body>
+</html>

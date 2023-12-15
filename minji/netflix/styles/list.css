@@ -1,0 +1,38 @@
+.section-list {
+  padding: 0 10px;
+}
+
+.title-list {
+  margin: 10px 0;
+}
+
+.movies-list {
+  display: flex;
+  gap: 60px;
+  height: 220px;
+  width: 100%;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.movies-list::-webkit-scrollbar {
+  display: none;
+}
+
+.movie-list {
+  display: flex;
+  height: 220px;
+  align-items: center;
+  list-style: none;
+
+  img {
+    height: 200px;
+    width: 135px;
+    object-fit: cover;
+  }
+
+  img:hover {
+    transform: scale(1.1);
+  }
+}
