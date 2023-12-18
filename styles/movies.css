@@ -2,13 +2,10 @@
     margin: 0px;
     padding: 0;
 }
-
 body {
     font-family: 'Arial', sans-serif;
     background-color: #111;
 }
-
-
 .mainMovie {
     background-image: url("../movie poster/메인영화.jpg");
     background-size: cover;
@@ -16,19 +13,16 @@ body {
     color: white;
     height: 448px;
 }
-
 .mainMovie-contents {
     margin-left: 50px;
     padding-top: 190px;
     height: 190px;
 }
-
 .mainMovie-title {
     font-size: 3rem;
     font-weight: 800;
     padding-bottom: 0.3rem
 }
-
 .mainMovie-description {
     margin-left: 20px;
     font-size: 1rem;
@@ -39,13 +33,11 @@ body {
     color: white;
     margin-left: -5px;
 }
-
 .row h3 {
     color: white;
     margin-left: 43px;
     margin-top: 30px;
 }
-
 .row_poster {
     width: 100%;
     object-fit: contain;
@@ -53,22 +45,18 @@ body {
     margin-right: 10px;
     transition: transform 450ms;
 }
-
 .row_posters {
     display: flex;
     overflow-y: hidden;
     overflow-x: scroll;
     padding: 20px;
 }
-
 .row_poster:hover {
     transform: scale(1.2);
 }
-
 .row_posters::-webkit-scrollbar {
     display: none;
 }
-
 .row_posterLarge {
     max-height: 250px;
 }

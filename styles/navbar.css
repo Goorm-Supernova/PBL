@@ -2,19 +2,14 @@
     background-color: #111;
     position: fixed;
     width: 100%;
-    z-index: 2; /*쉽게 말해서 높은 수치 값이 맨 앞에 있다*/
+    z-index: 1; /*쉽게 말해서 높은 수치 값이 맨 앞에 있다*/
     top: 0;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
-    
 }
 
 .navbar ul {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
+    display: flex;    
 }
 
 .navbar li {
