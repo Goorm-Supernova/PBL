@@ -1,0 +1,25 @@
+.main-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.movie-list {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.movie-list img {
+    width: 10vw;
+    transition: all 0.1s linear;
+}
+
+.movie-list img:hover {
+    transform: scale(1.4);
+    cursor: pointer;
+}
+
+.list-container {
+    margin: 15px 15px;
+}

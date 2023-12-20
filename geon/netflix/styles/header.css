@@ -1,0 +1,60 @@
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    background-image: url("../assets/images/header_image.jpeg");
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 50vh;
+    position: relative;
+    box-shadow: inset 0 15px 20px -5px black, inset 0px -15px 20px -2px black;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    position: fixed;
+}
+
+.icon-container
+
+.logo {
+    width: 70px;
+    padding: 10px 20px;
+}
+
+.avatar {
+    width: 30px;
+    padding: 10px 20px;
+}
+
+.header-info {
+    position: absolute;
+    top: 35%;
+    color: white;
+    width: 300px;
+    margin-left: 20px;
+}
+
+.header-info h1 {
+    font-size: 50px;
+}
+
+.header-info button {
+    width: 80px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border-radius: 5px;
+    border-style: none;
+    margin-top: 5px;
+}
+
+.header-info p {
+    font-size: 12px;
+    margin-top: 10px;
+}
