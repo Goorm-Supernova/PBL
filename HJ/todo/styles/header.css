@@ -1,0 +1,11 @@
+.header {
+    margin-bottom: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-title {
+    margin-top: 13px;
+}
