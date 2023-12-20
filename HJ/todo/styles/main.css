@@ -1,0 +1,52 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.todo-container {
+    background-color: yellowgreen;
+    max-width: 100%;
+    width: 380px;
+    height: 550px;
+}
+
+.title {
+    margin-top: 13px;
+    margin-bottom: 13px;
+    text-align: center;
+}
+
+.todo-list {
+    margin-left: 5px;
+    background-color: brown;
+    width: 370px;
+    height: 448px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.todo {
+    margin-top: 13px;
+    background-color: aqua;
+    width: 330px;
+    height: 75px;
+}
+
+.create-btn {
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 150px;
+    height: 30px;
+    display: block;
+}
+
+.post-todo-list {
+    background-color: #000000;
+    max-width: 100%;
+    width: 380px;
+    height: 550px;
+}
