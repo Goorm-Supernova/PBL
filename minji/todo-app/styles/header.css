@@ -1,0 +1,21 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 20px;
+}
+
+.header-title {
+  font-size: 30px;
+  font-weight: 800;
+  color: #bbe6f0;
+}
+
+.header-btn {
+  background-color: #bbe6f0;
+  border-radius: 30px;
+  border: none;
+  padding: 10px;
+  color: white;
+  font-size: 17px;
+  font-weight: 800;
+}
