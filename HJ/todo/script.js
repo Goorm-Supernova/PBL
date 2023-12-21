@@ -72,6 +72,11 @@ function createToDoElement(item) {
         inputEl.focus();
     });
 
+    removeBtnEl.addEventListener("click", () => {
+        todos = todos.filter((t) => t.id !== item.id);
+        itemEl.remove();
+    });
+
     actionsEl.append(editBtnEl);
     actionsEl.append(removeBtnEl);
 
