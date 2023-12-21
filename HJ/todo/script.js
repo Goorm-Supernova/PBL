@@ -17,11 +17,17 @@ function createNewTodo() {
     const { itemEl, inputEl, editBtnEl, removeBtnEl } = createToDoElement(item);
 
     list.prepend(itemEl);
+
+    inputEl.removeAttribute("disabled");
+    inputEl.focus();
 }
 
 function createToDoElement(item) {
     const itemEl = document.createElement("div");
     itemEl.classList.add("todo");
+
+    const checkboxEl = document.createElement("input");
+    checkboxEl.type = "checkbox";
 
     if (item.complete) {
         itemEl.classList.add("complete");
@@ -36,16 +42,17 @@ function createToDoElement(item) {
     actionsEl.classList.add("action");
 
     const editBtnEl = document.createElement("button");
-    editBtnEl.classList.add("a");
+    editBtnEl.classList.add("material-icons");
     editBtnEl.innerText = "edit";
 
     const removeBtnEl = document.createElement("button");
-    removeBtnEl.classList.add("remove-btn");
-    removeBtnEl.innerText = "remove";
+    removeBtnEl.classList.add("material-icons", "remove-btn");
+    removeBtnEl.innerText = "remove_circles";
 
     actionsEl.append(editBtnEl);
     actionsEl.append(removeBtnEl);
 
+    itemEl.append(checkboxEl);
     itemEl.append(inputEl);
     itemEl.append(actionsEl);
 
