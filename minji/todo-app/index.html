@@ -12,21 +12,12 @@
     <div id="todo-app">
       <header id="header">
         <div class="header-title">TODO APP</div>
-        <button class="header-btn">NEW</button>
+        <button class="header-btn" onclick="addNewTodo()">NEW</button>
       </header>
       <main id="main">
-        <ul class="todo-list">
-          <li class="todo">
-            <div class="todo-inputs">
-              <input type="checkbox" />
-              <input type="text" />
-            </div>
-            <div class="todo-buttons">
-              <button>수정</button> <button>삭제</button>
-            </div>
-          </li>
-        </ul>
+        <ul class="todo-list"></ul>
       </main>
     </div>
+    <script src="./script.js" />
   </body>
 </html>

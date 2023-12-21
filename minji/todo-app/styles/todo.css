@@ -30,6 +30,9 @@
     border: none;
     border-radius: 20px;
     padding: 5px 10px;
+    background-color: transparent;
+    outline: none;
+    font-weight: 600;
   }
 }
 
@@ -49,4 +52,15 @@
 
 .complete {
   background-color: #bceacf;
+  .todo-inputs {
+    text-decoration: line-through;
+  }
+}
+
+.focus {
+  background-color: #ddddff;
+}
+
+.select {
+  background-color: #ddffdd;
 }
