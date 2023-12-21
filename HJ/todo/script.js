@@ -1,7 +1,7 @@
 const list = document.getElementById("list");
 const createBtn = document.getElementById("create-btn");
 
-const todos = [];
+let todos = [];
 
 createBtn.addEventListener("click", createNewTodo);
 
@@ -48,6 +48,10 @@ function createToDoElement(item) {
     const removeBtnEl = document.createElement("button");
     removeBtnEl.classList.add("material-icons", "remove-btn");
     removeBtnEl.innerText = "remove_circles";
+
+    inputEl.addEventListener("input", () => {
+        item.text = inputEl.value;
+    });
 
     actionsEl.append(editBtnEl);
     actionsEl.append(removeBtnEl);
