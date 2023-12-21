@@ -49,8 +49,17 @@ function createToDoElement(item) {
     removeBtnEl.classList.add("material-icons", "remove-btn");
     removeBtnEl.innerText = "remove_circles";
 
+    inputEl.addEventListener("blur", () => {
+        inputEl.setAttribute("disabled", "");
+    });
+
     inputEl.addEventListener("input", () => {
         item.text = inputEl.value;
+    });
+
+    editBtnEl.addEventListener("click", () => {
+        inputEl.removeAttribute("disabled");
+        inputEl.focus();
     });
 
     actionsEl.append(editBtnEl);
