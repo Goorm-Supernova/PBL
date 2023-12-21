@@ -99,7 +99,6 @@
   background-color: #ddffdd;
 }
 
-/*얘 위치가 중요한감?*/
 .fade-out {
   animation: fadeOut ease-out 0.5s forwards;
 }
