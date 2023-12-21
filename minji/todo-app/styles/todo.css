@@ -1,7 +1,40 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
 .todo-list {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  animation: fadeInUp ease-out 1s;
 }
 
 .todo {
@@ -12,6 +45,7 @@
   border-radius: 40px;
   list-style: none;
   background-color: #ffe6f5;
+  animation: fadeIn ease-out 1s;
 }
 
 .todo-inputs {
@@ -63,4 +97,9 @@
 
 .select {
   background-color: #ddffdd;
+}
+
+/*얘 위치가 중요한감?*/
+.fade-out {
+  animation: fadeOut ease-out 0.5s forwards;
 }
