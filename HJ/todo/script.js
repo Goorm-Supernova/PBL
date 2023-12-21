@@ -49,6 +49,16 @@ function createToDoElement(item) {
     removeBtnEl.classList.add("material-icons", "remove-btn");
     removeBtnEl.innerText = "remove_circles";
 
+    checkboxEl.addEventListener("change", () => {
+        item.complete = checkboxEl.checked;
+
+        if (item.complete) {
+            itemEl.classList.add("complete");
+        } else {
+            itemEl.classList.remove("complete");
+        }
+    });
+
     inputEl.addEventListener("blur", () => {
         inputEl.setAttribute("disabled", "");
     });
