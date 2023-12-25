@@ -1,12 +1,4 @@
-import { octokit } from "./octokit.js";
-
-function getRepos(url) {
-  return octokit.request(`GET ${url}`, {
-    headers: {
-      "X-GitHub-Api-Version": "2022-11-28",
-    },
-  });
-}
+import { GITHUB_API } from "./api.js";
 
 function makeRepoElement(repo) {
   const { name, forks, watchers, stargazers_count } = repo;
@@ -46,11 +38,7 @@ export async function getUserInfo(user) {
   const spinner = document.querySelector(".spinner");
   spinner.classList.remove("d-none");
 
-  const response = await octokit.request(`GET /users/${user}`, {
-    headers: {
-      "X-GitHub-Api-Version": "2022-11-28",
-    },
-  });
+  const response = await GITHUB_API.getUserInfo(user);
 
   if (response.status !== 200) {
     //TODO 에러 처리
@@ -88,7 +76,7 @@ export async function getUserInfo(user) {
   const publicReposElement = document.querySelector(".info-public-repos");
   publicReposElement.innerText = public_repos;
 
-  const { data } = await getRepos(repos_url);
+  const { data } = await GITHUB_API.getRepos(repos_url);
   data.sort((a, b) => {
     if (new Date(a.pushed_at) >= new Date(b.pushed_at)) return -1;
     else return 1;
