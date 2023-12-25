@@ -16,47 +16,60 @@
     <section class="bg-primary-subtle p-md-3 d-flex flex-column">
       <h1 class="fw-bold">Search Github Users</h1>
       <p>Enter a username to fetch a user profile and repos</p>
-      <input type="text" />
-    </section>
-    <section class="d-flex gap-3 p-3">
-      <div class="d-flex flex-column">
-        <div>profile image</div>
-        <button class="btn btn-primary">View Profile</button>
+      <div class="d-flex gap-3">
+        <input type="text" class="name-input rounded border-0" />
+        <button class="find-btn btn btn-primary">FIND!</button>
       </div>
-      <div class="d-flex flex-column gap-3">
-        <div class="d-flex gap-2">
-          <div class="bg-danger-subtle p-1 rounded">Public Repos : 53</div>
-          <div class="bg-info-subtle p-1 rounded">Public Gists : 0</div>
-          <div class="bg-success-subtle p-1 rounded">Followers : 533</div>
-          <div class="bg-warning-subtle p-1 rounded">Following : 0</div>
-        </div>
+    </section>
+    <main class="main-section h-100 w-100 invisible">
+      <section class="d-flex gap-3 p-3">
         <div class="d-flex flex-column">
-          <div class="border p-2">Company : null</div>
-          <div class="border p-2">Company : null</div>
-          <div class="border p-2">Company : null</div>
-          <div class="border p-2">Company : null</div>
+          <div class="profile-image w-100 h-50 rounded-5 mb-2"></div>
+          <button class="btn btn-primary">
+            <a href="" class="profile-url text-white">View Profile</a>
+          </button>
         </div>
-      </div>
-    </section>
-    <section>
-      <h3 class="fw-bold p-3">Latest Repos</h3>
-      <div class="d-flex flex-column gap-2">
-        <div class="d-flex p-3 mx-3 border justify-content-between">
-          <div>react-diseny-deploy-test</div>
-          <div class="d-flex gap-2 text-white">
-            <div class="bg-secondary rounded px-3">Stars:</div>
-            <div class="bg-success rounded px-3">Watchers:</div>
-            <div class="bg-warning rounded px-3">Forks:</div>
+        <div class="d-flex flex-column gap-3">
+          <div class="d-flex gap-2">
+            <div class="bg-danger-subtle p-1 rounded">
+              Public Repos : <span class="info-public-repos"></span>
+            </div>
+            <div class="bg-info-subtle p-1 rounded">
+              Public Gists : <span class="info-public-gists"></span>
+            </div>
+            <div class="bg-success-subtle p-1 rounded">
+              Followers : <span class="info-followers"></span>
+            </div>
+            <div class="bg-warning-subtle p-1 rounded">
+              Following : <span class="info-following"></span>
+            </div>
+          </div>
+          <div class="d-flex flex-column">
+            <div class="border p-2">Company : null</div>
+            <div class="border p-2">Company : null</div>
+            <div class="border p-2">Company : null</div>
+            <div class="border p-2">Company : null</div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+      <section>
+        <h3 class="fw-bold p-3">Latest Repos</h3>
+        <div class="spinner d-flex justify-content-center mt-5 d-none">
+          <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+        <div class="repo-list d-flex flex-column gap-2"></div>
+      </section>
+    </main>
+    <!--TODO footer 디자인 수정-->
     <footer class="text-center">Github Finder</footer>
-    <div></div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+    <script src="./js/octokit.js" type="module"></script>
+    <script src="./js/getUserInfo.js" type="module"></script>
   </body>
 </html>
