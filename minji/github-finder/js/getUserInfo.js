@@ -1,4 +1,6 @@
-import { GITHUB_API } from "./api.js";
+import { GithubFetcher } from "./fetcher.js";
+
+const fetcher = new GithubFetcher();
 
 function makeRepoElement(repo) {
   const { name, forks, watchers, stargazers_count } = repo;
@@ -38,7 +40,7 @@ export async function getUserInfo(user) {
   const spinner = document.querySelector(".spinner");
   spinner.classList.remove("d-none");
 
-  const response = await GITHUB_API.getUserInfo(user);
+  const response = await fetcher.getUserInfo(user);
 
   if (response.status !== 200) {
     //TODO 에러 처리
@@ -76,7 +78,7 @@ export async function getUserInfo(user) {
   const publicReposElement = document.querySelector(".info-public-repos");
   publicReposElement.innerText = public_repos;
 
-  const { data } = await GITHUB_API.getRepos(repos_url);
+  const { data } = await fetcher.getRepos(repos_url);
   data.sort((a, b) => {
     if (new Date(a.pushed_at) >= new Date(b.pushed_at)) return -1;
     else return 1;
