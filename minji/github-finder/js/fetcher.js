@@ -2,9 +2,7 @@ import { Octokit } from "https://esm.sh/@octokit/core";
 
 export class GithubFetcher {
   constructor() {
-    this.octokit = new Octokit({
-      auth: "",
-    });
+    this.octokit = new Octokit();
   }
 
   #request(url) {
