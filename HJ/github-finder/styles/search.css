@@ -1,0 +1,24 @@
+.search {
+    border: 1px solid gray;
+
+    width: 45%;
+    height: 140px;
+
+    margin-top: 15px;
+    margin-left: 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    padding: 10px 20px 10px 20px;
+}
+
+.search__desc {
+    color: gray;
+}
+
+.search__input {
+    height: 30px;
+    padding-left: 10px;
+}

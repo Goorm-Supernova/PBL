@@ -4,6 +4,7 @@
         <title>Github Finder</title>
         <link rel="stylesheet" href="styles/general.css" />
         <link rel="stylesheet" href="styles/header.css" />
+        <link rel="stylesheet" href="styles/search.css" />
     </head>
     <body>
         <header class="header">
@@ -13,10 +14,16 @@
         </header>
 
         <section class="search-container">
-            <div>
+            <div class="search">
                 <h1>Search Github Users</h1>
-                <p>Enter a username to fetch a user profile and repos</p>
-                <input type="text" placeholder="Github Username..." />
+                <p class="search__desc">
+                    Enter a username to fetch a user profile and repos
+                </p>
+                <input
+                    class="search__input"
+                    type="text"
+                    placeholder="Github Username..."
+                />
             </div>
         </section>
 
