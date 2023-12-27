@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="styles/header.css" />
         <link rel="stylesheet" href="styles/search.css" />
         <link rel="stylesheet" href="styles/profile.css" />
+        <link rel="stylesheet" href="styles/repo.css" />
     </head>
     <body>
         <header class="header">
@@ -29,8 +30,33 @@
         </section>
 
         <section id="profiles" class="profile-container"></section>
+        <h2 class="repo-section__title">Latest Repos</h2>
+        <section id="repos" class="repo-container">
+            <div class="repo">
+                <div class="row">
+                    <div>
+                        <a href="#">repos name</a>
+                    </div>
 
-        <section class="repo-container"></section>
+                    <div>
+                        <span>Stars:</span>
+                        <span>Watchers:</span>
+                        <span>Forks:</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <a href="#">repos name</a>
+                    </div>
+
+                    <div>
+                        <span class="repo__star">Stars:</span>
+                        <span class="repo__watcher">Watchers:</span>
+                        <span class="repo__fork">Forks:</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <footer class="footer">Github Finder</footer>
         <script src="Github.js"></script>
