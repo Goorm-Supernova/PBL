@@ -1,2 +1,2 @@
 # github-finder
-JavaScript로 Todo리스트 구현하기
+JavaScript로 GitHub-finder 구현하기
