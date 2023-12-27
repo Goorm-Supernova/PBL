@@ -1,0 +1,47 @@
+.repo-section__title {
+    margin: 12px;
+}
+
+.repo__row {
+    font-size: 14px;
+
+    border: 1px solid gray;
+
+    width: 45%;
+    height: 40px;
+
+    margin-top: 15px;
+    margin-left: 15px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px 20px 10px 20px;
+}
+
+.repo__row div a {
+    text-decoration: none;
+    color: blue;
+}
+
+.repo__row div span {
+    color: white;
+
+    border-radius: 5px;
+
+    padding: 2px 5px 5px 5px;
+    margin-top: 20px;
+}
+
+.repo__star {
+    background-color: blue;
+}
+
+.repo__watcher {
+    background-color: gray;
+}
+
+.repo__fork {
+    background-color: green;
+}
