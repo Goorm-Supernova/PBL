@@ -5,7 +5,14 @@ const searchUser = document.querySelector(".search .search__input");
 searchUser.addEventListener("keyup", (e) => {
     const user = e.target.value;
     const userData = github.getUser(user).then((data) => {
-        document.getElementById("profiles").innerHTML = `<div class="profile">
+        if (data.message === "Not Found") {
+            document.getElementById(
+                "profiles"
+            ).innerHTML = `<h1>Not Found</h1>`;
+        } else {
+            document.getElementById(
+                "profiles"
+            ).innerHTML = `<div class="profile">
         <div class="row">
             <div class="user__left-box">
                 <img class="user__image" src="${data.avatar_url}"/>
@@ -25,5 +32,6 @@ searchUser.addEventListener("keyup", (e) => {
             </div>
         </div>
     </div>`;
+        }
     });
 });
