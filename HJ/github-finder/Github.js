@@ -11,7 +11,7 @@ class Github {
 
     async getRepo(user) {
         const repoResponse = await fetch(
-            this.GITHUB_URL + `/users/${user}/repos`
+            this.GITHUB_URL + `/users/${user}/repos?per_page=5&sort="asc"`
         );
 
         return await repoResponse.json();

@@ -34,12 +34,11 @@ searchUser.addEventListener("keyup", (e) => {
                 </div>
             </div>
         </div>`;
+                let addHTML = "";
                 github.getRepo(user).then((repos) => {
                     console.log("repo", repos);
                     for (const repo of repos) {
-                        document.getElementById(
-                            "repos"
-                        ).innerHTML = `<div class="repo">
+                        addHTML += `<div class="repo">
                 <div class="repo__row">
                     <div>
                         <a href="${repo.html_url}">${repo.name}</a>
@@ -53,6 +52,7 @@ searchUser.addEventListener("keyup", (e) => {
                 </div>
             </div>`;
                     }
+                    document.getElementById("repos").innerHTML = addHTML;
                 });
             }
         });
