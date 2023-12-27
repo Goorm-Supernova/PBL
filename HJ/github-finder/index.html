@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="styles/general.css" />
         <link rel="stylesheet" href="styles/header.css" />
         <link rel="stylesheet" href="styles/search.css" />
+        <link rel="stylesheet" href="styles/profile.css" />
     </head>
     <body>
         <header class="header">
@@ -27,10 +28,33 @@
             </div>
         </section>
 
-        <section class="profile-container"></section>
+        <section id="profiles" class="profile-container">
+            <div class="profile">
+                <div class="row">
+                    <div class="user__left-box">
+                        <img class="user__image" src="" />
+                        <a class="user__view-profile" href="">View Profile </a>
+                    </div>
+                    <div class="user__right-box">
+                        <span class="user__public-repo">Public Repo:</span>
+                        <span class="user__public-gists">Public Gists:</span>
+                        <span class="user__follower">Followers:</span>
+                        <span class="user__following">Following:</span>
+                        <div class="user__info">
+                            <div>Company:</div>
+                            <div>Website/Blog:</div>
+                            <div>Location:</div>
+                            <div>Member Since:</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <section class="repo-container"></section>
 
         <footer class="footer">Github Finder</footer>
+        <script src="Github.js"></script>
+        <script src="index.js"></script>
     </body>
 </html>
