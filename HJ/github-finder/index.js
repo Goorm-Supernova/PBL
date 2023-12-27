@@ -15,7 +15,7 @@ searchUser.addEventListener("keyup", (e) => {
                 document.getElementById(
                     "profiles"
                 ).innerHTML = `<div class="profile">
-            <div class="row">
+            <div class="profile__row">
                 <div class="user__left-box">
                     <img class="user__image" src="${data.avatar_url}"/>
                     <a class="user__view-profile" href="${data.html_url}">View Profile </a>
@@ -34,6 +34,26 @@ searchUser.addEventListener("keyup", (e) => {
                 </div>
             </div>
         </div>`;
+                github.getRepo(user).then((repos) => {
+                    console.log("repo", repos);
+                    for (const repo of repos) {
+                        document.getElementById(
+                            "repos"
+                        ).innerHTML = `<div class="repo">
+                <div class="repo__row">
+                    <div>
+                        <a href="${repo.html_url}">${repo.name}</a>
+                    </div>
+    
+                    <div>
+                        <span class="repo__star">Stars: ${repo.stargazers_count}</span>
+                        <span class="repo__watcher">Watchers: ${repo.watchers_count}</span>
+                        <span class="repo__fork">Forks: ${repo.forms_count}</span>
+                    </div>
+                </div>
+            </div>`;
+                    }
+                });
             }
         });
     } else {
