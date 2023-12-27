@@ -8,4 +8,12 @@ class Github {
 
         return await userResponse.json();
     }
+
+    async getRepo(user) {
+        const repoResponse = await fetch(
+            this.GITHUB_URL + `/users/${user}/repos`
+        );
+
+        return await repoResponse.json();
+    }
 }
