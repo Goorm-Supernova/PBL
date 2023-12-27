@@ -1,0 +1,93 @@
+.profile {
+    border: 1px solid gray;
+
+    width: 47.5%;
+    height: 300px;
+
+    margin-top: 15px;
+    margin-left: 15px;
+
+    font-size: 13px;
+}
+
+.row {
+    display: flex;
+}
+
+.user__left-box {
+    display: flex;
+    flex-direction: column;
+
+    margin: 20px;
+}
+
+.user__image {
+    width: 150px;
+    height: 200px;
+}
+
+.user__view-profile {
+    margin-top: 10px;
+    padding: 2px 5px 5px 5px;
+    text-align: center;
+
+    background-color: blue;
+    color: white;
+    text-decoration: none;
+
+    border-radius: 10px;
+}
+
+.user__right-box {
+    margin: 20px;
+}
+
+.user__public-repo {
+    background-color: blue;
+    color: white;
+
+    border-radius: 5px;
+
+    padding: 2px 5px 5px 5px;
+    margin-top: 20px;
+}
+
+.user__public-gists {
+    background-color: gray;
+    color: white;
+
+    border-radius: 5px;
+
+    padding: 2px 5px 5px 5px;
+    margin-top: 20px;
+}
+
+.user__follower {
+    background-color: green;
+    color: white;
+
+    border-radius: 5px;
+
+    padding: 2px 5px 5px 5px;
+    margin-top: 20px;
+}
+
+.user__following {
+    background-color: rgb(20, 20, 100);
+    color: white;
+
+    border-radius: 5px;
+
+    padding: 2px 5px 5px 5px;
+    margin-top: 20px;
+}
+
+.user__info {
+    margin-top: 20px;
+    border: 1px solid gray;
+}
+
+.user__info div {
+    border: 1px solid gray;
+    padding: 10px;
+}
