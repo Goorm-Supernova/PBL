@@ -12,6 +12,7 @@ searchUser.addEventListener("keyup", (e) => {
             } else {
                 // console.log("result", data);
                 view.viewProfile(data);
+                view.viewCommitChart(user);
                 github.getRepo(user).then((repos) => {
                     // console.log("repo", repos);
                     view.viewRepo(repos);

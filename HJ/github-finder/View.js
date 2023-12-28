@@ -2,6 +2,7 @@ class View {
     constructor() {
         this.profile = document.getElementById("profiles");
         this.repo = document.getElementById("repos");
+        this.commitChart = document.getElementById("commit-chart");
     }
 
     viewProfile(data) {
@@ -49,5 +50,9 @@ class View {
 
     viewNotFound() {
         this.profile.innerHTML = `<h1>Not Found</h1>`;
+    }
+
+    viewCommitChart(user) {
+        this.commitChart.innerHTML = `<img src="https://ghchart.rshah.org/${user}" alt="commit-chart">`;
     }
 }

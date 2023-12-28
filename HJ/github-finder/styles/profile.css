@@ -91,3 +91,7 @@
     border: 1px solid gray;
     padding: 10px;
 }
+
+#commit-chart {
+    margin: 10px 20px 10px 20px;
+}
