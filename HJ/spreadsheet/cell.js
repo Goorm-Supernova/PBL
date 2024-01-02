@@ -44,6 +44,27 @@ class Cell {
             cellEl.classList.add("header");
         }
 
+        cellEl.onclick = () => this.handleCellClick();
+
         return cellEl;
+    }
+
+    handleCellClick() {
+        this.clearHeaderActiveStates();
+        const columnHeaderEl = this.getElFromRowCol(0, this.column);
+        const rowHeaderEl = this.getElFromRowCol(this.row, 0);
+        columnHeaderEl.classList.add("active");
+        rowHeaderEl.classList.add("active");
+    }
+
+    clearHeaderActiveStates() {
+        const headers = document.querySelectorAll(".header");
+        headers.forEach((header) => {
+            header.classList.remove("active");
+        });
+    }
+
+    getElFromRowCol(row, col) {
+        return document.querySelector("#cell_" + row + col);
     }
 }
