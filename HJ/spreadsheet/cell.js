@@ -45,8 +45,13 @@ class Cell {
         }
 
         cellEl.onclick = () => this.handleCellClick();
+        cellEl.onchange = (e) => this.handleOnChange(e.target.value);
 
         return cellEl;
+    }
+
+    handleOnChange(data) {
+        this.data = data;
     }
 
     handleCellClick() {
