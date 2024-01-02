@@ -3,7 +3,7 @@ class SpreadSheet {
     MAX_COLS;
     spreadSheet = [];
 
-    constructor(rows, cols) {
+    constructor(rows, cols, locationTag) {
         this.MAX_ROWS = rows;
         this.MAX_COLS = cols;
 
@@ -23,6 +23,7 @@ class SpreadSheet {
             }
             this.spreadSheet.push(spreadSheetRow);
         }
+        this.drawSheet(locationTag);
     }
 
     drawSheet(locationTag) {
