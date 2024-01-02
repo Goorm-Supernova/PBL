@@ -24,4 +24,13 @@ class SpreadSheet {
             this.spreadSheet.push(spreadSheetRow);
         }
     }
+
+    drawSheet(locationTag) {
+        for (let i = 0; i < this.MAX_ROWS; i++) {
+            for (let j = 0; j < this.MAX_COLS; j++) {
+                const cell = this.spreadSheet[i][j];
+                locationTag.append(cell.createCellEl());
+            }
+        }
+    }
 }
