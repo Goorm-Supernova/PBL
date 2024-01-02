@@ -60,6 +60,8 @@ class Cell {
         const rowHeaderEl = this.getElFromRowCol(this.row, 0);
         columnHeaderEl.classList.add("active");
         rowHeaderEl.classList.add("active");
+        document.querySelector("#cell-status").innerHTML =
+            this.columnName + this.rowName;
     }
 
     clearHeaderActiveStates() {
