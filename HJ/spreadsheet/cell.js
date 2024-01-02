@@ -14,6 +14,11 @@ class Cell {
         cellEl.id = "cell_" + this.row + this.column;
         cellEl.value = this.data;
         cellEl.disabled = this.disabled;
+
+        if (this.isHeader) {
+            cellEl.classList.add("header");
+        }
+
         return cellEl;
     }
 }
