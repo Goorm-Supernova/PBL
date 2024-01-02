@@ -28,10 +28,13 @@ class SpreadSheet {
 
     drawSheet(locationTag) {
         for (let i = 0; i < this.MAX_ROWS; i++) {
+            const rowContainerEl = document.createElement("div");
+            rowContainerEl.className = "cell-row";
             for (let j = 0; j < this.MAX_COLS; j++) {
                 const cell = this.spreadSheet[i][j];
-                locationTag.append(cell.createCellEl());
+                rowContainerEl.append(cell.createCellEl());
             }
+            locationTag.append(rowContainerEl);
         }
     }
 }
