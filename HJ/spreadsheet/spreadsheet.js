@@ -10,7 +10,7 @@ class SpreadSheet {
         for (let i = 0; i < this.MAX_ROWS; i++) {
             let spreadSheetRow = [];
             for (let j = 0; j < this.MAX_COLS; j++) {
-                const cell = this.createCell(i, j);
+                const cell = new Cell(i, j, false);
                 spreadSheetRow.push(cell);
             }
             this.spreadSheet.push(spreadSheetRow);
@@ -28,29 +28,5 @@ class SpreadSheet {
             }
             locationTag.append(rowContainerEl);
         }
-    }
-
-    createCell(row, col) {
-        let cellData = "";
-        let isHeader = false;
-        let isDisable = false;
-
-        if (row === 0) {
-            cellData = String.fromCharCode(65 + col - 1);
-            isHeader = true;
-            isDisable = true;
-        }
-
-        if (col === 0) {
-            cellData = row;
-            isHeader = true;
-            isDisable = true;
-        }
-
-        if (!cellData) {
-            cellData = "";
-        }
-
-        return new Cell(isHeader, isDisable, cellData, row, col, false);
     }
 }
