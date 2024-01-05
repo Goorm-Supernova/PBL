@@ -1,0 +1,28 @@
+#export-btn {
+    width : 100px;
+    height : 50px;
+     
+    background-color: blue;
+}
+
+.cell-row {
+    display: flex;
+}
+
+.cell {
+    width: 80px;
+    border: 1px solid lightgray;
+    height : 40px;
+    outline: none;
+    box-sizing : border-box;
+}
+
+.cell.RC_header {
+    text-align: center;
+    background: #ddd;
+}
+
+.cell.RC_header.active {
+    background: lightblue;
+    color: white;
+}
