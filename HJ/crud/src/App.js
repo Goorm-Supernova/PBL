@@ -1,8 +1,13 @@
 import "./App.css";
 import BudgetContainer from "./components/BudgetContainer.js";
+import BudgetList from "./components/BudgetList.js";
 
 function App() {
-  return <BudgetContainer>예산 리스트</BudgetContainer>;
+  return (
+    <BudgetContainer>
+      <BudgetList />
+    </BudgetContainer>
+  );
 }
 
 export default App;
