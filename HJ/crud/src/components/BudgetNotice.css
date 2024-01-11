@@ -1,0 +1,12 @@
+.notice-text {
+  background-color: rgb(170, 228, 233);
+
+  font-size: 20px;
+  text-align: center;
+
+  border: 1px solid gray;
+  border-radius: 5px;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
