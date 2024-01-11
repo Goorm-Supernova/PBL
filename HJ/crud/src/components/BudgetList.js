@@ -2,7 +2,7 @@ import React from "react";
 import BudgetItem from "./BudgetItem";
 import "./BudgetList.css";
 
-function BudgetList({ budgetItems, onRemove, onEdit }) {
+function BudgetList({ budgetItems, onRemove, onEdit, onClear }) {
   return (
     <div className="budget-list">
       {budgetItems.map((budget) => (
@@ -13,7 +13,9 @@ function BudgetList({ budgetItems, onRemove, onEdit }) {
           onEdit={onEdit}
         />
       ))}
-      <button className="btn">목록 지우기</button>
+      <button className="btn" onClick={onClear}>
+        목록 지우기
+      </button>
     </div>
   );
 }

@@ -65,6 +65,10 @@ function App() {
     [budgets]
   );
 
+  const onClear = useCallback(() => {
+    setBudgets([]);
+  }, []);
+
   return (
     <BudgetContainer>
       <BudgetInput
@@ -75,7 +79,12 @@ function App() {
         price={price}
         onClick={onClick}
       />
-      <BudgetList budgetItems={budgets} onRemove={onRemove} onEdit={onEdit} />
+      <BudgetList
+        budgetItems={budgets}
+        onRemove={onRemove}
+        onEdit={onEdit}
+        onClear={onClear}
+      />
     </BudgetContainer>
   );
 }
