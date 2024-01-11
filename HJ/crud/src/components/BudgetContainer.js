@@ -1,7 +1,7 @@
 import React from "react";
 import "./BudgetContainer.css";
 
-function budgetContainer({ children }) {
+function BudgetContainer({ children }) {
   return (
     <div className="budget-container">
       <div className="container__title">예산 계산기</div>
@@ -10,4 +10,4 @@ function budgetContainer({ children }) {
   );
 }
 
-export default budgetContainer;
+export default BudgetContainer;
