@@ -22,10 +22,17 @@ function App() {
     [budgets]
   );
 
+  const onRemove = useCallback(
+    (id) => {
+      setBudgets(budgets.filter((budget) => budget.id !== id));
+    },
+    [budgets]
+  );
+
   return (
     <BudgetContainer>
       <BudgetInput onInsert={onInsert} />
-      <BudgetList budgetItems={budgets} />
+      <BudgetList budgetItems={budgets} onRemove={onRemove} />
     </BudgetContainer>
   );
 }
