@@ -1,27 +1,14 @@
-import React, { useCallback, useState } from "react";
+import React from "react";
 import "./BudgetInput.css";
 
-function BudgetInput({ onInsert }) {
-  const [title, setTitle] = useState("");
-  const [price, setPrice] = useState("");
-
-  const onChangeTitle = useCallback((e) => {
-    setTitle(e.target.value);
-  }, []);
-
-  const onChangePrice = useCallback((e) => {
-    setPrice(e.target.value);
-  }, []);
-
-  const onClick = useCallback(
-    (e) => {
-      onInsert(title, price);
-      setTitle("");
-      setPrice("");
-    },
-    [onInsert, title, price]
-  );
-
+function BudgetInput({
+  onInsert,
+  onChangePrice,
+  onChangeTitle,
+  title,
+  price,
+  onClick,
+}) {
   return (
     <div className="input-container">
       <div className="budget-input">
