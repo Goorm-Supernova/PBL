@@ -5,7 +5,13 @@ import BudgetInput from "./components/BudgetInput.js";
 import BudgetList from "./components/BudgetList.js";
 
 function App() {
-  const [budgets, setBudgets] = useState([]);
+  const [budgets, setBudgets] = useState([
+    {
+      id: 1,
+      title: "식비",
+      price: 1200,
+    },
+  ]);
 
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState(0);
@@ -20,22 +26,15 @@ function App() {
     setPrice(e.target.value);
   }, []);
 
-  const onClick = (e) => {
-    onInsert(title, price);
-    setTitle("");
-    setPrice("");
-  };
-
-  const onInsert = useCallback(
-    (title, price) => {
+  const onClick = useCallback(() => {
+    if (title !== "" && price > 0) {
       if (isEdit) {
-        const newBudget = budgets.map((b) => {
+        const newBudgets = budgets.map((b) => {
           return b.id === id ? { ...b, title, price } : b;
         });
-        setBudgets(newBudget);
+        setBudgets(newBudgets);
         setIsEdit(false);
       } else {
-        console.log("삽입");
         const newBudget = {
           id: crypto.randomUUID(),
           title,
@@ -43,9 +42,10 @@ function App() {
         };
         setBudgets(budgets.concat(newBudget));
       }
-    },
-    [budgets, isEdit, id]
-  );
+      setTitle("");
+      setPrice(0);
+    }
+  }, [budgets, isEdit, id, price, title]);
 
   const onRemove = useCallback(
     (id) => {
@@ -72,12 +72,12 @@ function App() {
   return (
     <BudgetContainer>
       <BudgetInput
-        onInsert={onInsert}
         onChangePrice={onChangePrice}
         onChangeTitle={onChangeTitle}
         title={title}
         price={price}
         onClick={onClick}
+        isEdit={isEdit}
       />
       <BudgetList
         budgetItems={budgets}

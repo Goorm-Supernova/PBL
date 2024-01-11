@@ -2,12 +2,12 @@ import React from "react";
 import "./BudgetInput.css";
 
 function BudgetInput({
-  onInsert,
   onChangePrice,
   onChangeTitle,
   title,
   price,
   onClick,
+  isEdit,
 }) {
   return (
     <div className="input-container">
@@ -31,7 +31,7 @@ function BudgetInput({
         </div>
       </div>
       <button className="btn" onClick={onClick}>
-        제출
+        {isEdit ? "수정" : "제출"}
       </button>
     </div>
   );
