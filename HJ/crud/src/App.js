@@ -4,6 +4,7 @@ import BudgetContainer from "./components/BudgetContainer.js";
 import BudgetInput from "./components/BudgetInput.js";
 import BudgetList from "./components/BudgetList.js";
 import BudgetNotice from "./components/BudgetNotice.js";
+import TotalBudget from "./components/TotalBudget.js";
 
 function App() {
   const [budgets, setBudgets] = useState([
@@ -72,7 +73,7 @@ function App() {
 
   const onClear = useCallback(() => {
     setBudgets([]);
-    onNotice("예산이 리스트가 삭제 되었습니다.");
+    onNotice("예산 리스트가 삭제 되었습니다.");
   }, []);
 
   const onNotice = (text) => {
@@ -100,6 +101,7 @@ function App() {
           onEdit={onEdit}
           onClear={onClear}
         />
+        <TotalBudget budgets={budgets} />
       </BudgetContainer>
     </>
   );
