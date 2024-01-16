@@ -1,5 +1,5 @@
 function App() {
-  return <div className="text-3xl">shopping mall</div>;
+  return <div>app</div>;
 }
 
 export default App;
