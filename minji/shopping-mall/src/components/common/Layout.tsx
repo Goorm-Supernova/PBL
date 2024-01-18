@@ -1,6 +1,7 @@
 import { Outlet, useNavigate } from "react-router-dom";
 import { BsCart } from "react-icons/bs";
 import { BiExit } from "react-icons/bi";
+import { AUTH_API } from "../../service/auth";
 
 function Layout() {
   const navigate = useNavigate();
@@ -10,7 +11,7 @@ function Layout() {
         <span>Shop</span>
         <div className="flex gap-5">
           <BsCart onClick={() => navigate("/cart")} />
-          <BiExit />
+          <BiExit onClick={() => AUTH_API.signOut()} />
         </div>
       </header>
       <main className="w-screen p-10">
