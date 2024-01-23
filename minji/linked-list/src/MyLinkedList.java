@@ -1,6 +1,10 @@
-class MyLinkedList<T>{
-    public Node head;
-    public Node tail;
+import java.util.Iterator;
+
+
+
+class MyLinkedList<T> implements Iterable<T> {
+    public Node<T> head;
+    public Node<T> tail;
     public int length;
 
     public MyLinkedList(){
@@ -28,7 +32,7 @@ class MyLinkedList<T>{
             cur = cur.next;
         }
 
-        final Node<T> newNode = new Node(data);
+        final Node<T> newNode = new Node<T>(data);
         cur.next.prev = newNode;
         newNode.next = cur.next;
         cur.next = newNode;
@@ -46,5 +50,26 @@ class MyLinkedList<T>{
 
         return cur.data;
     }
+    class LinkedListIterator implements  Iterator<T>{
+        private Node<T> cur;
+        public LinkedListIterator(){
+            cur = head;
+        }
 
+        @Override
+        public boolean hasNext() {
+            return cur.next.next!=null;
+        }
+
+        @Override
+        public T next() {
+            cur = cur.next;
+            return cur.data;
+        }
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return new LinkedListIterator();
+    }
 }

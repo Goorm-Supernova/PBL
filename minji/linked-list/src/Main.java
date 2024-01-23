@@ -17,5 +17,7 @@ public class Main {
         final MyStack<Integer> stack = new MyStack<Integer>();
         stack.push(1);
         System.out.println(stack.pop());
+
+        linkedList.forEach(v->System.out.println(v));
     }
 }
