@@ -4,11 +4,11 @@ import styles from "./Nav.module.scss";
 
 const Nav = () => {
   return (
-    <nav>
+    <nav className={styles.nav}>
       <ul>
         <li>
           <div className={styles.counter}>
-            <Link to={"cart"}> {/* <FiShoppingCart/> */}</Link>
+            <Link to={"/cart"}> {/* <FiShoppingCart/> */}</Link>
           </div>
         </li>
         <li>
