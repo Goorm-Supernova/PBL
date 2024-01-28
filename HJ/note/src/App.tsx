@@ -8,10 +8,19 @@ import {
   TagNotes,
   TrashNotes,
 } from "./pages";
+import { useAppSelector } from "./hooks/redux";
+import { CreateNoteModal, TagsModal } from "./components";
 
 const App = () => {
+  const { viewEditTagsModal, viewCreateNoteModal } = useAppSelector(
+    (state) => state.modal
+  );
+
   return (
     <div className="app">
+      {viewCreateNoteModal && <CreateNoteModal />}
+      {viewEditTagsModal && <TagsModal type="edit" />}
+
       <BrowserRouter>
         <Sidebar />
         <div className="app__container">
