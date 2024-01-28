@@ -17,7 +17,7 @@ const FiltersCategory = () => {
       />
       <CategoryTab
         text={"여성의류"}
-        categoryName={CategoriesName.WomenClothing}
+        categoryName={CategoriesName.WomensClothing}
       />
     </div>
   );

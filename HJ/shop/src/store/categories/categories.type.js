@@ -3,5 +3,5 @@ export const CategoriesName = {
   Electronics: "Electronics",
   Jewelry: "Jewelery",
   MensClothing: `Men's clothing`,
-  WomenClothing: `Women's clothing`,
+  WomensClothing: `Women's clothing`,
 };
