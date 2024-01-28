@@ -10,6 +10,8 @@ import {
 } from "./pages";
 import { useAppSelector } from "./hooks/redux";
 import { CreateNoteModal, TagsModal } from "./components";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   const { viewEditTagsModal, viewCreateNoteModal } = useAppSelector(
@@ -20,6 +22,13 @@ const App = () => {
     <div className="app">
       {viewCreateNoteModal && <CreateNoteModal />}
       {viewEditTagsModal && <TagsModal type="edit" />}
+
+      <ToastContainer
+        position="bottom-right"
+        theme="light"
+        pauseOnHover
+        autoClose={1500}
+      />
 
       <BrowserRouter>
         <Sidebar />
