@@ -13,11 +13,17 @@ import {
   toggleCreateNoteModal,
   toggleTagsModal,
 } from "../../../store/modal/modalSlice";
-import { setEditNote } from "../../../store/notesList/notesListSlice";
+import {
+  setEditNote,
+  setMainNotes,
+} from "../../../store/notesList/notesListSlice";
 import { ButtonFill, ButtonOutline } from "../../../styles/styles";
 import { TagsModal } from "../..";
 import { v4 } from "uuid";
 import TextEditor from "../../TextEditor/TextEditor";
+import { toast } from "react-toastify";
+import dayjs from "dayjs";
+import { Note } from "../../../types/note";
 
 const CreateNoteModal = () => {
   const dispatch = useAppDispatch();
@@ -43,6 +49,45 @@ const CreateNoteModal = () => {
     } else {
       setAddedTags(addedTags.filter(({ tag }) => tag !== newTag));
     }
+  };
+
+  const createNoteHandler = () => {
+    if (!noteTitle) {
+      toast.error("You must add title");
+      return;
+    } else if (value === "<p><br></p>") {
+      toast.error("You must write note");
+      return;
+    }
+
+    const date = dayjs().format("DD/MM/YY h:mm A");
+
+    let note: Partial<Note> = {
+      title: noteTitle,
+      content: value,
+      tags: addedTags,
+      color: noteColor,
+      priority,
+      editedTime: new Date().getTime(),
+    };
+
+    if (editNote) {
+      note = { ...editNote, ...note };
+    } else {
+      note = {
+        ...note,
+        date,
+        createTime: new Date().getTime(),
+        editedTime: null,
+        isPinned: false,
+        isRead: false,
+        id: v4(),
+      };
+    }
+
+    dispatch(setMainNotes(note));
+    dispatch(toggleCreateNoteModal(false));
+    dispatch(setEditNote(null));
   };
 
   return (
@@ -124,7 +169,7 @@ const CreateNoteModal = () => {
         </OptionsBox>
 
         <div className="createNote__create-btn">
-          <ButtonFill>
+          <ButtonFill onClick={createNoteHandler}>
             {editNote ? (
               <span>저장하기</span>
             ) : (
