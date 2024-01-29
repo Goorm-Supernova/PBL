@@ -44,7 +44,7 @@ const getRelevantBtns = (type: string, note: Note, dispatch: Dispatch) => {
           onClick={() => dispatch(restoreNote(note))}
           date-info="Restore"
         >
-          <FaTrashRestore />
+          <FaTrashRestore style={{ fontSize: "1rem" }} />
         </NotesIconBox>
         <NotesIconBox
           onClick={() => dispatch(deleteNote(note))}
@@ -57,14 +57,14 @@ const getRelevantBtns = (type: string, note: Note, dispatch: Dispatch) => {
   } else {
     return (
       <>
-        <NotesIconBox date-info="Edit">
+        <NotesIconBox onClick={clickHandler} date-info="Edit">
           <FaEdit style={{ fontSize: "1rem" }} onClick={clickHandler} />
         </NotesIconBox>
         <NotesIconBox
           onClick={() => dispatch(setArchiveNotes(note))}
           data-info="Archive"
         >
-          <FaArchive />
+          <FaTrashRestore style={{ fontSize: "1rem" }} />
         </NotesIconBox>
         <NotesIconBox
           onClick={() => dispatch(setTrashNotes(note))}

@@ -5,7 +5,7 @@ import { useAppSelector } from "../../../hooks/redux";
 import { DeleteBox, FixedContainer } from "../Modal.styles";
 import { Box, StyledInput, TagsBox } from "./TagsModal.styles";
 import { toggleTagsModal } from "../../../store/modal/modalSlice";
-import { FaTimes } from "react-icons/fa";
+import { FaMinus, FaPlus, FaTimes } from "react-icons/fa";
 import { v4 } from "uuid";
 import { addTags, deleteTag } from "../../../store/tags/tagsSlice";
 import { removeTags } from "../../../store/notesList/notesListSlice";
@@ -69,9 +69,21 @@ const TagsModal: FC<TagsModalProps> = ({
           {tagsList.map(({ tag, id }) => (
             <li key={id}>
               <div className="editTags__tag">{getStandardName(tag)}</div>
-              <DeleteBox onClick={() => deleteTagsHandler(tag, id)}>
-                <FaTimes />
-              </DeleteBox>
+              {type === "edit" ? (
+                <DeleteBox onClick={() => deleteTagsHandler(tag, id)}>
+                  <FaTimes />
+                </DeleteBox>
+              ) : (
+                <DeleteBox>
+                  {addedTags?.find(
+                    (addTags: Tag) => addTags.tag === tag.toLowerCase()
+                  ) ? (
+                    <FaMinus onClick={() => handleTags!(tag, "remove")} />
+                  ) : (
+                    <FaPlus onClick={() => handleTags!(tag, "add")} />
+                  )}
+                </DeleteBox>
+              )}
             </li>
           ))}
         </TagsBox>
