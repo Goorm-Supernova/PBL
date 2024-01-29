@@ -17,8 +17,8 @@ const initialState: NoteState = {
 };
 
 const enum noteType {
-  archiveNotes = "archiveNote",
-  trashNotes = "trashNote",
+  archiveNotes = "archiveNotes",
+  trashNotes = "trashNotes",
   mainNotes = "mainNotes",
 }
 
