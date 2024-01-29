@@ -1,4 +1,3 @@
-import React from "react";
 import { Note } from "../types/note";
 import { Dispatch } from "@reduxjs/toolkit";
 import { NotesIconBox } from "../styles/styles";
