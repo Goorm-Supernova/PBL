@@ -11,7 +11,7 @@ import {
   unArchiveNote,
 } from "../store/notesList/notesListSlice";
 import { RiInboxUnarchiveFill } from "react-icons/ri";
-import { FaArchive, FaEdit, FaTrash, FaTrashRestore } from "react-icons/fa";
+import { FaEdit, FaTrash, FaTrashRestore } from "react-icons/fa";
 import { toggleCreateNoteModal } from "../store/modal/modalSlice";
 
 const getRelevantBtns = (type: string, note: Note, dispatch: Dispatch) => {
