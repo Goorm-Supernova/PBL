@@ -11,7 +11,9 @@ import { NotesIconBox } from "../../styles/styles";
 import { BsFillPinFill } from "react-icons/bs";
 import getRelevantBtns from "../../utils/getRelevantBtns";
 import { useAppDispatch } from "../../hooks/redux";
-import { setPinnedNotes } from "../../store/notesList/notesListSlice";
+import { readNote, setPinnedNotes } from "../../store/notesList/notesListSlice";
+import parse from "html-react-parser";
+import { ReadNoteModal } from "..";
 
 interface NoteCardProps {
   note: Note;
@@ -22,8 +24,20 @@ const NoteCard: FC<NoteCardProps> = ({ note, type }) => {
   const dispatch = useAppDispatch();
   const { title, content, tags, color, priority, date, isPinned, isRead, id } =
     note;
+
+  const func = () => {
+    const imgContent = content.includes("img");
+
+    if (imgContent) {
+      return content;
+    } else {
+      return content.length > 75 ? content.slice(0, 75) + " ...." : content;
+    }
+  };
+
   return (
     <>
+      {isRead && <ReadNoteModal note={note} type={type} />}
       <Card style={{ backgroundColor: color }}>
         <TopBox>
           <div className="noteCard__title">
@@ -42,7 +56,9 @@ const NoteCard: FC<NoteCardProps> = ({ note, type }) => {
             )}
           </div>
         </TopBox>
-        <ContentBox>{content}</ContentBox>
+        <ContentBox onClick={() => dispatch(readNote({ type, id }))}>
+          {parse(func())}
+        </ContentBox>
 
         <TagsBox>
           {tags?.map(({ tag, id }) => (

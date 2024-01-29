@@ -79,7 +79,7 @@ const notesListSlice = createSlice({
       const { type, id } = payload;
 
       const setRead = (notes: noteType) => {
-        state[notes] = setRead[notes].map((note: Note) =>
+        state[notes] = state[notes].map((note: Note) =>
           note.id === id ? { ...note, isRead: !note.isRead } : note
         );
       };
