@@ -9,6 +9,8 @@ import {
 } from "./NoteCard.styles";
 import { NotesIconBox } from "../../styles/styles";
 import { BsFillPinFill } from "react-icons/bs";
+import getRelevantBtns from "../../utils/getRelevantBtns";
+import { useAppDispatch } from "../../hooks/redux";
 
 interface NoteCardProps {
   note: Note;
@@ -16,6 +18,7 @@ interface NoteCardProps {
 }
 
 const NoteCard: FC<NoteCardProps> = ({ note, type }) => {
+  const dispatch = useAppDispatch();
   const { title, content, tags, color, priority, date, isPinned, isRead, id } =
     note;
   return (
@@ -45,6 +48,7 @@ const NoteCard: FC<NoteCardProps> = ({ note, type }) => {
 
         <FooterBox>
           <div className="noteCard__date">{date}</div>
+          <div>{getRelevantBtns(type, note, dispatch)}</div>
         </FooterBox>
       </Card>
     </>
